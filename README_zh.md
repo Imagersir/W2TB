@@ -30,6 +30,7 @@ WC=wtb.tb_h(fermi=8.2,dn=4,seedname="wannier90")
 ```python
 WC.show_Hmatrix(r1=[-1,1],r2=[-1,1],r3=[-1,1],rr=[1],cr=[1],dn=1,nm=0.15)
 ```
+![Alt text](image.png)
 接着计算能带
 ```python
 kpath=[[0.5,0.0,0.0],[0.33333,0.33333,0.0],[0.0,0.0,0.0],[0.0,0.0,0.5]]
