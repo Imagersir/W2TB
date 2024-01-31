@@ -10,7 +10,11 @@
 - 分块处理紧束缚模型哈密顿量
 
 ## 安装
-
+首先
+```bash
+pip install numpy sympy
+```
+然后
 ```bash
 git clone +项目地址
 ```

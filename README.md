@@ -10,7 +10,11 @@ By reading the seedname_hr.dat file output from WANNIER90, combined with the inf
 - Block processing of the tight-binding model Hamiltonian
 
 ## Installation
-
+Firstly
+```bash
+pip install numpy sympy
+```
+Then
 ```bash
 git clone + project address
 ```
