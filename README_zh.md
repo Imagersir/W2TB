@@ -12,7 +12,7 @@
 ## 安装
 首先
 ```bash
-pip install numpy sympy
+pip install numpy sympy matplotlib
 ```
 然后
 ```bash

@@ -12,7 +12,7 @@ By reading the seedname_hr.dat file output from WANNIER90, combined with the inf
 ## Installation
 Firstly
 ```bash
-pip install numpy sympy
+pip install numpy sympy matplotlib
 ```
 Then
 ```bash
