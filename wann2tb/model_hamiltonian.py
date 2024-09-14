@@ -1,5 +1,6 @@
 import numpy as np
 import sympy as sp
+from tqdm import tqdm
 
 def Schmidt_orth(eigenvector):
     num = eigenvector.shape[1]
@@ -175,6 +176,31 @@ class tb_h:
                                 Htemp[i,j] = f
                     self.H[r1+3][r2+3][r3+3]=np.round(Htemp,self.dn)
         print('The Hmatrix has been constructed')
+    def output_hr(self):
+        print('Start to construct the file hr.dat')
+        ff = open(self.seedname+"_new_hr.dat", "w+")         # 返回一个文件对象 
+        ff.write(" writen by W2TB\n") 
+        ff.write("   %i"%self.num_wann)
+        nr=7*7*7
+        ff.write("   %i"%nr)
+        for i in range(nr):
+            if i%15==0:
+                ff.write('\n')
+            ff.write(" %i"%1)
+        db=100.0/nr/self.num_wann
+        with tqdm(total=100) as pbar:
+            for r1 in range(-3,4):
+                for r2 in range(-3,4):
+                    for r3 in range(-3,4):
+                        for i in range(self.num_wann):
+                            for j in range(self.num_wann):
+                                hr=np.real(self.H[r1+3][r2+3][r3+3][i,j])
+                                hi=np.imag(self.H[r1+3][r2+3][r3+3][i,j])
+                                ff.write("\n %i %i %i %i %i %f %f "%(r1,r2,r3,i+1,j+1,hr,hi))
+                            pbar.update(db)
+        
+        ff.close()
+        print('The file hr.dat has been constructed')
     def select_Hblock(self,na,nb,r1=[0,0],r2=[0,0],r3=[0,0],obl=[],dn=None,nm=0,k=[]):
         if dn==None:
             dn=self.dn
