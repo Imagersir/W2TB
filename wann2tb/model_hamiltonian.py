@@ -310,7 +310,7 @@ class tb_h:
         kcount=0.0
         for kv in k_point:
             kcount+=100.0/len(k_point)
-            slvs=self.get_eigs(kv,R1r,R2r,R3r,udiag,rr,mm,m0)
+            slvs=self.get_eigs(kv.tolist(),R1r,R2r,R3r,udiag,rr,mm,m0)
             eig = slvs[0]
             vecs= slvs[1]    
             for i in range(len(eig)):
