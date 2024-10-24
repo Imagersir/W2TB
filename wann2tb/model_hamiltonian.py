@@ -180,7 +180,7 @@ class tb_h:
         print('Start to construct the file hr.dat')
         ff = open(self.seedname+"_new_hr.dat", "w+")         # 返回一个文件对象 
         ff.write(" writen by W2TB\n") 
-        ff.write("   %i"%self.num_wann)
+        ff.write("   %i\n"%self.num_wann)
         nr=7*7*7
         ff.write("   %i"%nr)
         for i in range(nr):
